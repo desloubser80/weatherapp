@@ -10,8 +10,8 @@ const app = express();
 
 //define paths for express configs
 const publicDirectoryPath = path.join(__dirname,'../public');
-const viewsPath = path.join(__dirname,'../src/templates/views');
-const partialsPath = path.join(__dirname,'../src/templates/partials');
+const viewsPath = path.join(__dirname,'../templates/views');
+const partialsPath = path.join(__dirname,'../templates/partials');
 
 //setup handle bars engine and views location
 app.set('view engine','hbs'); 

@@ -19,7 +19,6 @@ weatherForm.addEventListener('submit',(e)=> {
             }
             else
             {
-                
                 messageOne.textContent = data.temp;
                 messageTwo.textContent = data.summary;
             }
