@@ -3,12 +3,12 @@ const weatherForm = document.querySelector('form');
 const search = document.querySelector('input');
 const messageOne = document.querySelector('#p1');
 const messageTwo = document.querySelector('#p2');
+const messageThree = document.querySelector('#p3');
 
 weatherForm.addEventListener('submit',(e)=> {
     e.preventDefault()
     const location = search.value
-    //console.log(location);
-
+   
     fetch(`/weather?address=${location}`).then((response)=>
     {
         response.json().then((data)=>
@@ -19,8 +19,9 @@ weatherForm.addEventListener('submit',(e)=> {
             }
             else
             {
-                messageOne.textContent = data.temp;
-                messageTwo.textContent = data.summary;
+                messageOne.textContent = "Current Temp for: " + data.location 
+                messageTwo.textContent = data.temp + " degrees Celsius";
+                messageThree.textContent ="Conditions: "+  data.summary;
             }
         })
     });

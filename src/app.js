@@ -45,7 +45,9 @@ app.get('/weather',(req,res)=>
                 }
                 else
                 {
-                    res.send({"temp":weather.temp, "summary":weather.summary, "location" : req.query.address })
+                    var response = {"temp":weather.temp, "summary":weather.summary, "location" : coordinates.place}
+                    console.log(response)
+                    res.send(response)
                 }
             });
         }

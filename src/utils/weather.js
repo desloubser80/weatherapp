@@ -4,6 +4,8 @@ var getWeather= (coordinates,callback)=>
 {
     var lat = coordinates.lat;
     var long = coordinates.long;
+    var place = coordinates.place;
+   
 
     var dsUrl = "https://api.darksky.net/forecast/b2af32d00887e7b85105ecb45d4de3fe/"+lat+","+long+"?units=si";
 
@@ -26,8 +28,7 @@ var getWeather= (coordinates,callback)=>
             {
                 var temp = response.body.currently.temperature;    
                 var summary = response.body.currently.summary;   
-                
-                callback(undefined,{temp,summary});
+                callback(undefined,{temp,summary,place});
             }
         }
     );
